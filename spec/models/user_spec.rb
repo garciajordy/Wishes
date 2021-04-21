@@ -16,4 +16,20 @@ RSpec.describe User, type: :model do
       expect(@user).to be_valid
     end
   end
+
+  context 'testing scopes' do
+    before do
+      @user = User.create(name: 'jordy')
+      @group = @user.groups.create(name: 'Microverse', icon: 'link')
+      Wishlist.create(group_id: @group.id, author_id: @user.id, name: 'Ruby', amount: 15)
+      Wishlist.create(group_id: @group.id, author_id: @user.id, name: 'Ruby', amount: 15)
+      Wishlist.create(group_id: @group.id, author_id: @user.id, name: 'Ruby', amount: 15)
+    end
+    it 'returns sum of all wishes to be 45$' do
+      expect(@user.wishes.sum(:amount)).to eq(45)
+    end
+    it 'returns count of all wishes to be 3' do
+      expect(@user.wishes.count).to eq(3)
+    end
+  end
 end
