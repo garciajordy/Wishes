@@ -1,0 +1,44 @@
+        <body>
+            <nav class="login-nav p-2 navbar-top">
+                <div class=" d-flex">
+                    <div class="col-4"><a href="/groups"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+                    <div class="col-4 groups-div">DETAILS</div>
+                </div>
+            </nav>
+
+            <div class="mt-5"></div>
+            <div class="p-2">
+                <div class="d-flex">
+                    <img class="w-25 mr-2" src="<%= imageurl(@group) %>" alt="No Image">
+                    <h1> <%=  @group.name %> </h1>
+                </div>
+                <div>
+                    <p class="m-1">Date:</p>
+                    <p><%= @group.created_at.strftime("%b %d, %Y") %></p>
+                </div>
+
+                <div>
+                    <p> Total Wishes: </p>
+                    <p>$ <%=  @group.wishlists.sum(:amount) %></p>
+                </div>
+            </div>
+            <div class="extra">
+                <% @wishes.each do |wish| %>
+                <div class="wish-items row">
+                    <div class="col-6">
+                        <p> <%= wish.name %></p>
+                        <p>$ <%= wish.amount %></p>
+                        <p> <%= wish.created_at.strftime("%b %d, %Y") %></p>
+                    </div>
+                    <div class="col-6">
+                        <p> <%= User.find(wish.author_id).name%> </p>
+                        <%= paybutton(wish) %>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+            <div class="green-field mt-2">
+                <%= button_to "Add Wish", new_wishlists_path(@group) , class: "green-button", method: "get" %>
+            </div>
+
+        </body>
