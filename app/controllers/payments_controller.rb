@@ -1,9 +1,8 @@
-# frozen_string_literal: true
-
 class PaymentsController < ApplicationController
   def new
     @payment = Payment.new
   end
+
   def show
     @payments = Payment.where(user_id: current_user.id).order(created_at: :asc)
   end

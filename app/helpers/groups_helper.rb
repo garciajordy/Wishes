@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module GroupsHelper
   def imageurl(group)
     return group.icon if group.icon

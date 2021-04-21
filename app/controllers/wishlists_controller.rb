@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class WishlistsController < ApplicationController
   def index
     @wishes = current_user.wishes.order(created_at: :asc)

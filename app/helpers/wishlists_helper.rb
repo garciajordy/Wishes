@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module WishlistsHelper
   def imageurl(group)
     return group.icon if group.icon
@@ -28,7 +26,4 @@ module WishlistsHelper
     end
     "Paid by #{@user.name}"
   end
-
-  
- 
 end
