@@ -1,0 +1,26 @@
+<nav class="login-nav pt-2">
+    <div class=" d-flex">
+        <div class="col-4"><a href="/users/<%=current_user.id%>"><i class="fa fa-bars" aria-hidden="true"></i></a></div>
+        <div class="col-4 groups-div">PAYMENTS</div>
+    </div>
+    <div class="d-flex justify-content-end pt-2 pb-0 mb-0">
+        <% @payment %>
+        <p class="mr-4 recent mb-1">Most Recent</p>
+        <a href="payments/show" class="mr-1 recent mb-1 inactive">Most Ancient</a>
+    </div>
+</nav>
+<div class="mt-4">h</div>
+<div class="extra mt-2">
+    <% @payments.each do |payment| %>
+
+    <div class="p-2 payment-items">
+        <% @wish = Wishlist.find(payment.wishlist.id)%>
+        <p>$ <%= @wish.amount %></p>
+        <p>Paid for <%= User.find(@wish.author_id).name.capitalize %>'s wish</p>
+        <p><%=@wish.name.capitalize%></p>
+        <p> <%= payment.created_at.strftime("%b %d, %Y") %></p>
+
+    </div>
+
+    <% end %>
+</div>

@@ -1,0 +1,17 @@
+<nav class="login-nav d-flex p-2">
+    <div class="col-4"><a href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+    <div class="col-4">REGISTER</div>
+</nav>
+
+<div class="login-page">
+    <div>
+        <%= form_with(model: @user, local: true) do |f| %>
+
+        <%= f.text_field :name, class: 'login-field', placeholder: "Username" %>
+
+        <%= f.submit "next", class: "hello" %>
+        <% end %>
+
+
+    </div>
+</div>

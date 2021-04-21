@@ -1,0 +1,20 @@
+<body>
+    <nav class="login-nav p-2 navbar-top">
+        <div class=" d-flex">
+            <div class="col-4"><a href="/users/<%=current_user.id%>"><i class="fa fa-bars" aria-hidden="true"></i></a></div>
+            <div class="col-4 groups-div">Groups</div>
+        </div>
+    </nav>
+    <div class="mt-5"></div>
+    <div class="extra">
+        <% @groups.each do |group| %>
+
+        <div class="list-items"><img class="w-25 mr-2" src="<%= imageurl(group)%>" alt="No IMG"><%= link_to group.name, group_path(group) %><p class="text-right">$<%= group.wishlists.sum(:amount)%></p>
+        </div>
+
+        <% end %>
+    </div>
+    <div class="green-field">
+        <%= button_to "Create", new_group_path, class: "green-button", method: "get" %>
+    </div>
+</body>

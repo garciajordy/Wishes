@@ -1,0 +1,19 @@
+<nav class="login-nav d-flex p-2 navbar-top">
+    <div class="col-3"><a href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></div>
+    <div class="col-4 text-center create-group">CREATE GROUP</div>
+</nav>
+
+<div class="login-page">
+    <div>
+        <%= form_with(model: @group) do |f| %>
+
+        <%= f.text_field :name, class: 'login-field', placeholder: "Group Name", required: true %>
+        <%= f.text_field :icon, class: 'login-field mt-0', placeholder: "Icon URL" %>
+        <div class="green-field">
+            <%= f.submit "Create", class: "green-button" %>
+        </div>
+        <% end %>
+
+
+    </div>
+</div>

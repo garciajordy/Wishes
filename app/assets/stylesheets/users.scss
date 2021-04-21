@@ -1,0 +1,158 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@font-face {
+  font-family: "proxima_novalight";
+  src:
+    url("fontsfree-net-proxima-nova-light-webfont.woff2") format("woff2"),
+    url("fontsfree-net-proxima-nova-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "proxima_novabold";
+  src:
+    url("fontsfree-net-proxima-nova-bold-webfont.woff2") format("woff2"),
+    url("fontsfree-net-proxima-nova-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$light: "proxima_novalight";
+$bold: "proxima_novabold";
+$primary-color: #3778c2;
+$secondary-color: #434b54;
+$tertiary-color: #5fb523;
+$text-color: darken(#fff, 20);
+
+html,
+body {
+  min-height: 100%;
+}
+
+.homepage {
+  padding: 10rem 0;
+
+  h1 {
+    font-family: $light;
+  }
+}
+
+.fa,
+.fas {
+  color: $text-color;
+}
+
+.groups-div {
+  font-family: $light;
+}
+
+.recent {
+  font-family: $light;
+}
+
+.inactive {
+  color: rgba(255, 255, 255, 0.418);
+}
+
+.create-group {
+  white-space: nowrap;
+}
+
+.green-field {
+  background-color: $tertiary-color;
+  padding: 0.5rem;
+  margin-top: 2rem;
+}
+
+.green-button {
+  background-color: transparent;
+  border: 1px solid $text-color;
+  color: $text-color;
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.login-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient($primary-color, darken($primary-color, 10));
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+}
+
+.white-con {
+  background-color: #fff;
+}
+
+.button {
+  background-color: $primary-color;
+  color: $text-color;
+}
+
+.login-field {
+  width: 100vw;
+  margin-top: 3rem;
+  border: $text-color 1px solid;
+  padding: 0.7rem;
+}
+
+.login-field:invalid {
+  border: red 1px solid;
+}
+
+.login-page {
+  background-color: lighten($text-color, 10);
+  min-height: 100vh;
+}
+
+.hello {
+  position: fixed;
+  top: 5px;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.651);
+}
+
+.text {
+  color: darken($text-color, 20);
+}
+
+h3 {
+  color: $text-color;
+  font-family: $light;
+}
+
+.show {
+  background-image:
+    linear-gradient(
+      40deg,
+      $primary-color,
+      darken($primary-color, 30)
+    );
+}
+
+.fa-cog {
+  color: $text-color;
+  padding: 0.3rem;
+  border-radius: 50%;
+  border: $text-color 1px solid;
+}
+
+.link {
+  padding-bottom: 1rem;
+  border-bottom: rgba(255, 255, 255, 0.144) solid 1px;
+  width: 100%;
+}
+
+.links {
+  color: $text-color;
+  font-family: $light;
+}
