@@ -1,5 +1,3 @@
-<html class="show">
-
 <body class="show">
     <div class="w-100 justify-content-center d-flex mb-3"><img class="mt-5 rounded-circle w-25" src="https://drgsearch.com/wp-content/uploads/2020/01/no-photo.png" alt="no img"></div>
     <h3 class="text-center"><%= @user.name.capitalize %></h3>
@@ -7,6 +5,9 @@
     <div>
         <div class="w-100 my-4 d-flex align-items-start"><i class="fa fa-gift mx-3" aria-hidden="true"></i>
             <div class="link"><%= link_to "All my wishes", wishlists_path, class: "links" %></div>
+        </div>
+        <div class="w-100 my-4 d-flex align-items-start"><i class="fas fa-gifts mx-3"></i>
+            <div class="link"><%= link_to "All my external wishes", wishlists_external_path, class: "links" %></div>
         </div>
         <div class="w-100 my-4 d-flex align-items-start"><i class="fas fa-credit-card mx-3"></i>
             <div class="link"><%= link_to "All payments", payments_path, class: "links" %></div>
@@ -20,5 +21,3 @@
     </div>
 
 </body>
-
-</html>
