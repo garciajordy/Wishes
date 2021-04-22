@@ -7,8 +7,8 @@
      <div>
          <%= form_with model: [@group, @group.wishlists.build] do |f|%>
          <%= f.hidden_field :author_id, value: current_user.id  %>
-         <%= f.text_field :name, class: 'login-field', placeholder: "Wish Name", required: true %>
-         <%= f.number_field :amount, class: 'login-field mt-0', placeholder: "$", required: true %>
+         <%= f.text_field :name,id: "wishname", class: 'login-field', placeholder: "Wish Name", required: true %>
+         <%= f.number_field :amount,id: "wishamount", class: 'login-field mt-0', placeholder: "$", required: true %>
          <div class="green-field">
              <%= f.submit "Create", class: "green-button" %>
          </div>

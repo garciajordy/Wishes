@@ -9,7 +9,7 @@
         <% @group.errors.full_messages_for(:name).each do |m| %>
         <%= m %>
         <% end %>
-        <%= f.text_field :name, class: 'login-field', placeholder: "Group Name", required: true %>
+        <%= f.text_field :name, class: 'login-field',id: "groupname", placeholder: "Group Name", required: true %>
         <%= f.text_field :icon, class: 'login-field mt-0', placeholder: "Icon URL" %>
         <div class="green-field">
             <%= f.submit "Create", class: "green-button" %>

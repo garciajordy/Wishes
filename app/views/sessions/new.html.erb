@@ -9,7 +9,7 @@
 
         <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
-        <%= f.text_field :name, class: 'login-field', placeholder: "Username" %>
+        <%= f.text_field :name, class: 'login-field', placeholder: "Username", id: "name" %>
 
         <%= f.submit "Log in", class: "hello" %>
         <% end %>
