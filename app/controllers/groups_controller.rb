@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.all.order(created_at: 'DESC')
+    @groups = Group.where.not(id: 1).order(created_at: 'DESC')
   end
 
   def show
