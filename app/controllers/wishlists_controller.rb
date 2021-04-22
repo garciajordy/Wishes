@@ -1,10 +1,10 @@
 class WishlistsController < ApplicationController
   def index
-    @wishes = current_user.wishes.where.not(group_id: 0).order(created_at: :asc)
+    @wishes = current_user.wishes.where.not(group_id: 99999).order(created_at: :asc)
   end
 
   def show
-    @wishes = current_user.wishes.where.not(group_id: 0).order(created_at: :desc)
+    @wishes = current_user.wishes.where.not(group_id: 99999).order(created_at: :desc)
   end
 
   def new
@@ -14,10 +14,10 @@ class WishlistsController < ApplicationController
     @wish = @user.wishes.new
   end
   def external
-    @wishes = current_user.wishes.where(group_id: 0).order(created_at: :desc)
+    @wishes = current_user.wishes.where(group_id: 99999).order(created_at: :desc)
   end
   def externala
-    @wishes = current_user.wishes.where(group_id: 0).order(created_at: :asc)
+    @wishes = current_user.wishes.where(group_id: 99999).order(created_at: :asc)
   end
   def newexternal
     session[:return_to] ||= request.referer

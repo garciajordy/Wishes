@@ -6,7 +6,7 @@
      </nav>
      <div>
          <%= form_with model: [@user, @user.wishes.build] do |f|%>
-         <%= f.hidden_field :group_id, value: 0  %>
+         <%= f.hidden_field :group_id, value: 99999  %>
          <%= f.text_field :name,id: "wishname", class: 'login-field', placeholder: "Wish Name", required: true %>
          <%= f.number_field :amount,id: "wishamount", class: 'login-field mt-0', placeholder: "$", required: true %>
          <div class="green-field">
