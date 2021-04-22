@@ -31,7 +31,7 @@
                         <p> <%= wish.created_at.strftime("%b %d, %Y") %></p>
                     </div>
                     <div class="col-6">
-                        <p> <%= User.find(wish.author_id).name%> </p>
+                        <p> <%= name(wish) %> </p>
                         <%= paybutton(wish) %>
                     </div>
                 </div>
