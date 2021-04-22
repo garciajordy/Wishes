@@ -15,7 +15,6 @@ class WishlistsController < ApplicationController
   def create
     @group = Group.find(params[:group_id])
     @wish = @group.wishlists.create(wish_params)
-    # @wish.author_id = current_user.id
     if @wish.save
       redirect_to group_path(@group)
     else

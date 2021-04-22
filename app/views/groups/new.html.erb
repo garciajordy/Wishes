@@ -6,7 +6,9 @@
 <div class="login-page">
     <div>
         <%= form_with(model: @group) do |f| %>
-
+        <% @group.errors.full_messages_for(:name).each do |m| %>
+        <%= m %>
+        <% end %>
         <%= f.text_field :name, class: 'login-field', placeholder: "Group Name", required: true %>
         <%= f.text_field :icon, class: 'login-field mt-0', placeholder: "Icon URL" %>
         <div class="green-field">

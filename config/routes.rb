@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resource :wishlists do
     resources :payments, only: [:create]
   end
-  # get    '/allwishlists' to: 'wishlists#index'
   get 'payments/show', to: "payments#show"
   get 'wishlists/index', to: "wishlists#index"
   get    '/login',   to: 'sessions#new'
