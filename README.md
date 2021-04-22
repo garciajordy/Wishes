@@ -9,7 +9,7 @@ Wishes is a mobile only app where you can create groups, add wishes, pay other u
 
 ## Live Demo
 
-[Live demo](https://gentle-sands-67436.herokuapp.com/)
+[Live demo](https://whispering-sea-44240.herokuapp.com/)
 
 ## Getting Started
 
