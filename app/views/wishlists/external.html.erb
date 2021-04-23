@@ -1,11 +1,12 @@
+<html>
 <nav class="login-nav pt-2 navbar-top">
     <div class=" d-flex">
         <div class="col-4"><a href="/users/<%=current_user.id%>"><i class="fa fa-bars" aria-hidden="true"></i></a></div>
-        <div class="col-4 groups-div">My Wishlist</div>
+        <div class="col-4 groups-div">My External Wishlist</div>
     </div>
     <div class="d-flex justify-content-end pt-2 pb-0 mb-0">
         <p class="mr-4 recent mb-1">Most Recent</p>
-        <a href="wishlists/index" class="mr-1 recent mb-1 inactive">Most Ancient</a>
+        <a href="externala" class="mr-1 recent mb-1 inactive">Most Ancient</a>
     </div>
 </nav>
 <div class="p-4"></div>
@@ -18,10 +19,12 @@
             <p> <%= wish.created_at.strftime("%b %d, %Y") %></p>
             <p><%= paidornot(wish)%></p>
         </div>
-        <div class="col-6">
-            <img class="w-100" src="<%=Group.where(id: wish.group_id).first.icon%>">
-            <%= (Group.where(id: wish.group_id).first).name%>
-        </div>
+
     </div>
     <% end %>
 </div>
+<div class="green-field mt-2">
+    <%= button_to "Add Wish", wishlists_newexternal_path , class: "green-button", method: "get" %>
+</div>
+
+</html>

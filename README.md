@@ -7,6 +7,10 @@ Wishes is a mobile only app where you can create groups, add wishes, pay other u
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 
+## Live Demo
+
+[Live demo](https://whispering-sea-44240.herokuapp.com/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.

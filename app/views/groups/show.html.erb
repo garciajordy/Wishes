@@ -9,7 +9,7 @@
             <div class="mt-5"></div>
             <div class="p-2">
                 <div class="d-flex">
-                    <img class="w-25 mr-2" src="<%= imageurl(@group) %>" alt="No Image">
+                    <img class="w-25 mr-2" src="<%= @group.icon %>" alt="No Image">
                     <h1> <%=  @group.name %> </h1>
                 </div>
                 <div>
@@ -31,7 +31,7 @@
                         <p> <%= wish.created_at.strftime("%b %d, %Y") %></p>
                     </div>
                     <div class="col-6">
-                        <p> <%= User.find(wish.author_id).name%> </p>
+                        <p> <%= name(wish) %> </p>
                         <%= paybutton(wish) %>
                     </div>
                 </div>

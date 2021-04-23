@@ -7,8 +7,12 @@
     <div>
         <%= form_with(model: @user, local: true) do |f| %>
 
-        <%= f.text_field :name, class: 'login-field', placeholder: "Username" %>
-
+        <%= f.text_field :name, class: 'login-field', placeholder: "Username", id: "username" %>
+        <% @user.errors.full_messages_for(:name).each do |m| %>
+        <div class="alert alert-danger mt-1">
+            <%= m %>
+        </div>
+        <% end %>
         <%= f.submit "next", class: "hello" %>
         <% end %>
 

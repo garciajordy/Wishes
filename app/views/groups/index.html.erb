@@ -9,7 +9,7 @@
     <div class="extra">
         <% @groups.each do |group| %>
 
-        <div class="list-items"><img class="w-25 mr-2" src="<%= imageurl(group)%>" alt="No IMG"><%= link_to group.name, group_path(group) %><p class="text-right">$<%= group.wishlists.sum(:amount)%></p>
+        <div class="list-items"><img class="w-25 mr-2" src="<%= group.icon%>" alt="No IMG"><%= link_to group.name, group_path(group) %><p class="text-right">$<%= group.wishlists.sum(:amount)%></p>
         </div>
 
         <% end %>
